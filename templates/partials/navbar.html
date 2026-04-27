@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold" href="/">ShopEasy</a>
+
+        <!-- Search Bar -->
+        <form class="d-flex mx-auto w-50" method="GET" action="/">
+            <input class="form-control rounded-0" type="search" name="q" placeholder="Search products">
+            <button class="btn btn-warning rounded-0">Search</button>
+        </form>
+
+        <!-- Right Side -->
+        <ul class="navbar-nav">
+
+            <!-- Cart -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cart' %}">
+                     Cart
+                    <span class="badge bg-warning text-dark">{{ cart_count }}</span>
+                </a>
+            </li>
+
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    Hello, {{ user.username }}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a class="dropdown-item" href="{% url 'orders' %}">My Orders</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item text-danger" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                </ul>
+    </div>
+</nav>
+
+

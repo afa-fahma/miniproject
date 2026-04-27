@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="mb-4" style="color: crimson;">Footwear </h1>
+
+<div class="products-container">
+    {% for product in products %}
+    <div class="product-card">
+        <div class="image-box">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+
+            <div class="product-info">
+            <h3>{{ product.name }}</h3>
+            <p class="price">{{ product.price }}</p>
+            
+            <a href="{% url 'add_to_cart' product.id %}" class="btn">Add to Cart</a>
+            
+    </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

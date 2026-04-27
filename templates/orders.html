@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="background-color:pink; min-height:100vh; padding:40px; max-width: 820px; margin: auto;">
+
+    <h2 style="text-align:center; margin-bottom:30px; font-size: 28px;">My Orders</h2>
+
+    <table class="table table-bordered table-hover" style="background:white; border-radius:10px; overflow:hidden;">
+
+        <thead style="background-color:#343a40; color:white;">
+            <tr>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                
+                <td style="padding: 16px;">{{ order.product.name }}</td>
+                <td style="padding: 16px;">{{ order.quantity }}</td>
+                <td style="padding: 16px;">{{ order.payment_status }}</td>
+                <td style="padding: 16px;">{{ order.ordered_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

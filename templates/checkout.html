@@ -1,0 +1,50 @@
+<form method="POST">
+    {% csrf_token %}
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #fcbbd0;
+        }
+    
+        .box {
+            width: 60%;
+            margin: auto;
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+    
+        button {
+            background-color: #dc3c8c;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+        }
+    
+        button:hover {
+            background-color: #ab4b7e;
+        }
+    </style>
+
+    <input type="text" name="name" placeholder="Name" required><br><br>
+    <input type="text" name="phone" placeholder="Phone" required><br><br>
+    <textarea name="address" placeholder="Address" required></textarea><br><br>
+
+    <h3>Select Payment Method</h3>
+
+    <input type="radio" name="payment_method" value="cod" required> Cash on Delivery<br>
+    <input type="radio" name="payment_method" value="online" required> Online Payment<br><br>
+
+    <button type="submit">Place Order</button>
+</form>

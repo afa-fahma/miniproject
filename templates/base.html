@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    {% block content %}
+<nav class="navbar">
+    <div class="logo">MyShop</div>
+
+    <input type="text" placeholder="Search for products..." class="search-box">
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Cart</a>
+        <a href="#">Login</a>
+    </div>
+</nav>
+    {% endblock %}
+</body>
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>MyShop</h3>
+            <p>Your one-stop shop for footwear.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#">Home</a>
+            <a href="#">Cart</a>
+            <a href="#">Login</a>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: support@myshop.com</p>
+            <p>Phone: +91 9876543210</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 MyShop | All Rights Reserved</p>
+    </div>
+</footer>
+</html>

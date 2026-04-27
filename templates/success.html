@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %} 
+<!-- <h2>Payment Successful!</h2>
+<a href="/">Continue Shopping</a> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Payment Successful</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: rgb(199, 36, 91);
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .box {
+            background: rgb(230, 213, 230);
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 60px;
+            color: rgb(193, 73, 113);
+        }
+
+        h2 {
+            color: rgb(204, 86, 126);
+        }
+
+        p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .btn:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="icon">✅</div>
+
+        
+        <h2>Payment Successful!</h2>
+        <p>Your order has been placed successfully.</p>
+        <p>Thank you for shopping with us 💖</p>
+    
+
+        <a href="/" class="btn">Continue Shopping</a>
+    </div>
+
+</body>
+
+</html>
+{% endblock %}
+
+
+
