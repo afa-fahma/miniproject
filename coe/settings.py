@@ -19,6 +19,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 import os
 
+from dotenv import load_dotenv
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -33,12 +37,14 @@ LOGOUT_REDIRECT_URL = '/'
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z1g^2@9bc)s8n9^khwa*rbfcsxu1w0ebq2s!w-$q852*-tn)6y'
+SECRET_KEY =os.getenv("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS =  os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+
 
 
 # Application definition
@@ -54,6 +60,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,15 +137,15 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 
 
 
 
-import os
-from dotenv import load_dotenv
-load_dotenv(os.path.join(BASE_DIR, '.env'))
-STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+
+
 
 
